@@ -41,6 +41,15 @@ El objetivo principal es evaluar las habilidades en desarrollo backend con PHP, 
    ```sh
    php artisan key:generate
    ```
+5. Configurar base de datos
+   ```sh
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=nombre_bd
+   DB_USERNAME=username
+   DB_PASSWORD=password
+   ```
 5. Ejecutar migraciones (Con seeder para carga inicial de productos):
    ```sh
    php artisan migrate --seed
@@ -49,17 +58,4 @@ El objetivo principal es evaluar las habilidades en desarrollo backend con PHP, 
    ```sh
    php artisan serve
    ```
-
-## Endpoints Implementados
-### Autenticación con API externa
-- **`POST /api/login`**: Obtiene un token JWT y lo almacena en sesión.
-- **`Middleware JWT`**: Renueva el token automáticamente si está expirado.
-
-### Configuración Regional
-- **`GET /api/regiones`**: Retorna regiones y comunas desde la API externa.
-
-### Manejo del Carrito
-- **`POST /api/cart/add`**: Agrega productos al carrito.
-- **`GET /api/cart`**: Obtiene el contenido del carrito.
-- **`POST /api/cart/shipping-rates`**: Envía los datos del carrito y la ubicación para obtener tarifas de envío.
 
