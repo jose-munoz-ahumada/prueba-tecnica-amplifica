@@ -20,7 +20,7 @@ class AmplificaService implements ShippingApiInterface
 
     public function __construct()
     {
-        $this->baseUrl = config('shipping.amplifica.base_url');
+        $this->baseUrl = rtrim(config('shipping.amplifica.base_url', 'https://postulaciones.amplifica.io'), '/');
         $this->username = config('shipping.amplifica.username');
         $this->password = config('shipping.amplifica.password');
     }
