@@ -8,7 +8,7 @@ El objetivo principal es evaluar las habilidades en desarrollo backend con PHP, 
 ## Tecnologías Utilizadas
 - **Backend:** PHP 8.x con Laravel 12
 - **Base de Datos:** MySQL
-- **Frontend:** Blade
+- **Frontend:** Blade, Tailwind 4, Javascript
 
 ## Instalación y Configuración
 ### Requisitos Previos
@@ -50,12 +50,16 @@ El objetivo principal es evaluar las habilidades en desarrollo backend con PHP, 
    DB_USERNAME=username
    DB_PASSWORD=password
    ```
-5. Ejecutar migraciones (Con seeder para carga inicial de productos):
+6. Ejecutar migraciones (Con seeder para carga inicial de productos):
    ```sh
    php artisan migrate --seed
    ```
-6. Iniciar el servidor de desarrollo:
+7. Iniciar el servidor de desarrollo:
    ```sh
    php artisan serve
    ```
-
+   
+## Que me falto por implementar
+- Tests
+- Cache a las consultas del carrito
+- Mejorar el manejo de alguna excepciones
