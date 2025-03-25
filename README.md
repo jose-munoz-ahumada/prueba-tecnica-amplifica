@@ -12,7 +12,7 @@ El objetivo principal es evaluar las habilidades en desarrollo backend con PHP, 
 
 ## Instalación y Configuración
 ### Requisitos Previos
-- PHP 8.2
+- PHP >= 8.2
 - Composer
 - Base de datos MySQL (o Bien Sqlite version 3)
 
