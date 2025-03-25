@@ -50,6 +50,7 @@ El objetivo principal es evaluar las habilidades en desarrollo backend con PHP, 
    php artisan cache:clear
    ```
 7. Configurar base de datos
+   #### (Para mysql)
    ```sh
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
@@ -58,6 +59,16 @@ El objetivo principal es evaluar las habilidades en desarrollo backend con PHP, 
    DB_USERNAME=username
    DB_PASSWORD=password
    ```
+   #### (Para Sqlite)
+    ```sh
+   DB_CONNECTION=sqlite
+   #DB_HOST=127.0.0.1
+   #DB_PORT=3306
+   #DB_DATABASE=nombre_bd
+   #DB_USERNAME=username
+   #DB_PASSWORD=password
+   ```
+   
 8. Ejecutar migraciones (Con seeder para carga inicial de productos):
    ```sh
    php artisan migrate
