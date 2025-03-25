@@ -6,7 +6,7 @@ Este proyecto es parte del proceso de postulación a Amplifica, una Darkstore y 
 El objetivo principal es evaluar las habilidades en desarrollo backend con PHP, autenticación de usuarios e integración con APIs externas.
 
 ## Tecnologías Utilizadas
-- **Backend:** PHP 8.x con Laravel 12
+- **Backend:** PHP 8.4 con Laravel 12
 - **Base de Datos:** MySQL
 - **Frontend:** Blade, Tailwind 4, Javascript
 
@@ -14,7 +14,7 @@ El objetivo principal es evaluar las habilidades en desarrollo backend con PHP, 
 ### Requisitos Previos
 - PHP 8.2
 - Composer
-- Base de datos MySQL
+- Base de datos MySQL (o Bien Sqlite version 3)
 
 ### Pasos de Instalación
 1. Clonar el repositorio:
@@ -33,15 +33,23 @@ El objetivo principal es evaluar las habilidades en desarrollo backend con PHP, 
     - Configurar la conexión a la base de datos si se va a usar persistencia.
     - Agregar las credenciales de la API en `.env`:
       ```env
-      API_BASE_URL=https://postulaciones.amplifica.io/
-      API_USERNAME=tu_correo@example.com
-      API_PASSWORD=12345
+      AMPLIFICA_API_BASE_URL='https://postulaciones.amplifica.io/'
+      AMPLIFICA_USERNAME='tu_correo@example.com'
+      AMPLIFICA_PASSWORD='12345'
       ```
 4. Generar clave de aplicación:
    ```sh
    php artisan key:generate
    ```
-5. Configurar base de datos
+5. Generar cache de los archivos de configuracion
+   ```sh
+   php artisan config:cache
+   ```
+   Si es necesario borrar el cache despues
+   ```sh
+   php artisan cache:clear
+   ```
+7. Configurar base de datos
    ```sh
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
@@ -50,11 +58,15 @@ El objetivo principal es evaluar las habilidades en desarrollo backend con PHP, 
    DB_USERNAME=username
    DB_PASSWORD=password
    ```
-6. Ejecutar migraciones (Con seeder para carga inicial de productos):
+8. Ejecutar migraciones (Con seeder para carga inicial de productos):
+   ```sh
+   php artisan migrate
+   ```
+   Ejecutar seeders para carga inicial de productos
    ```sh
    php artisan migrate --seed
    ```
-7. Iniciar el servidor de desarrollo:
+10. Iniciar el servidor de desarrollo:
    ```sh
    php artisan serve
    ```
